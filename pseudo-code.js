@@ -24,7 +24,7 @@
     //   var queryUrl = endpoint + query + apiKey;
     // define the folowing TWO THINGS
                 // **NUMBER OF OUTPUT,URL
-// construct a loop so that the quer in the ajax functons gives the reasults.
+ construct a loop so that the quer in the ajax functons gives the reasults.
 //creat an element so that the out put from the api will be displayed.
         // use documents.creatElement(use the jquery method) 
         // set an attribute for the elemnts contens  
@@ -36,23 +36,24 @@
         // ****click events
 // spesify the all of the buttons that need an event listner 
      // identify the start translating button 
-        // .empty to clear the inpute text area after each use  
+       .empty  to clear the inpute text area after each use  
         // **identify the maximum number of characters it will translate
+            //   use conditinal statmnets
         // **create a confirm function when the app is started( )
-        // confirm(are you afirst time user)if(yes ) go to the next step else (please see see followind instruction)
-        // **create a prompt or an alert when the start button is clicked.(what language do you speak)
+       optinal // confirm(are you afirst time user)if(yes ) go to the next step else (please see see followind instruction)
+      **create a prompt or an alert when the start button is clicked.(what language do you speak)
 //  identify the stop recording button
             // prompt and stop recording when max recording is reached
             // call the stop recoding fuction
-            // specify the maximum set time out or the maximum word the app takes in  one minute
-            // alert  the user and stop recording 
+            optinal// specify the maximum set time out or the maximum word the app takes in  one minute
+            optinal// alert  the user and stop recording 
             // .emty() function to clear the text area from being populated for the next use
 
 // define the eventlistner funcion using  the right id and classes
         
 // clear the resul functtion
     //  it will clear all the out put which was used already
-    // we can call this for both the input and ouput text areas
+    // we can call this for both the   ouput text areas
 
 // define the stop recording function
 
@@ -60,34 +61,18 @@
 
 
 
-// define the start the start the dictionary   
+// define the start  the dictionary   
 
 
-// define the stop the dictionary 
+// define the stop the dictionary function
 
 
-// define the click function 
+//
 
 
 
 // ask for customer feedback
+// ask for initials
+// 
 
 
-// 
-// 
-// 
-// 
-//  
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-/s
