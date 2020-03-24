@@ -19,8 +19,11 @@
 
 // ********function declaration
 
+
     // make an AJAX request to the API to get the needed values
     //   var queryUrl = endpoint + query + apiKey;
+    // define the folowing TWO THINGS
+                // **NUMBER OF OUTPUT,URL
 // construct a loop so that the quer in the ajax functons gives the reasults.
 //creat an element so that the out put from the api will be displayed.
         // use documents.creatElement(use the jquery method) 
@@ -45,11 +48,11 @@
             // alert  the user and stop recording 
             // .emty() function to clear the text area from being populated for the next use
 
-// define the eventlistner funcion using  the write id and classes
+// define the eventlistner funcion using  the right id and classes
         
 // clear the resul functtion
     //  it will clear all the out put which was used already
-    // we can call this for bothe the input snd ouput text areas
+    // we can call this for both the input and ouput text areas
 
 // define the stop recording function
 
