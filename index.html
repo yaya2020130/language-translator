@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>languageTranslator</title>
 </head>
+
 <body>
-    
+    <div class="titleSection">
+        <h1 id="title">languageTranslator!</h1>
+    </div>
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Language Selector</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <form>
+
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> </textarea>
+        <div id="header">
+            <button id="btnhome">Translate</button>
+            <button id="btnabout">Clear</button>
+    </form>
+    <form>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> </textarea>
+    </form>
+
 </body>
+
 </html>

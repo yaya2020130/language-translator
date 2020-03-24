@@ -1,0 +1,18 @@
+body {
+    background-color: lightsteelblue;
+}
+
+
+#title {
+    text-align:center;
+}
+#form {
+    padding-right: 50px;
+}
+.form-control{
+    min-width: 600px; 
+    max-width: 1000px;
+    max-height: 100px;
+    min-height: 100px;
+}
+
