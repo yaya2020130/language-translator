@@ -21,6 +21,8 @@ $(function() {
             url: endpointUrl + "?q=" + inputText + "&langpair=" + srcLang + "|" + targetLang,
             method: "GET"
         }).then(function(response) {
+            console.log(response)
+            
             //for translation quality - iterate through matches and find the machine translation if possible -- work on this later if needed
             // let translation;
             // for (let i = 0; i < response.matches.length; i++) {
@@ -77,6 +79,36 @@ $(function() {
 }); // NO REAL CODE BELOW THIS LINE==========================
 
 
+
+// ==============================================
+
+ 
+// const voice =document.querySelector(".voice");
+// const voice2text=document.querySelector(".voice2text")
+
+// const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+
+// const recorder=new SpeechRecognition();
+// recorder.interimResults=true;
+
+// recorder.onstart=()=>{
+//   console.log('voice activated');
+// };
+
+// recorder.onresult=(event)=>{
+//    console.log(event)
+//    const resultIndex=event.resultIndex;
+//    const transcript=event.results[
+//   resultIndex][0].transcript
+//   voice2text.textcontent=transcript;
+
+//  }
+// voice.addEventListener('click',()=>{
+//   recorder.start();
+// })
+
+
+// =================================================================
 
 // for voice stuff, add this to the above code
 
