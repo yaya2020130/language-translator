@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
         integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width">
+        <!-- link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+        <script src="https://use.fontawesome.com/9fb4ea5fa6.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>languageTranslator</title>
 </head>
 
@@ -19,23 +23,34 @@
             <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                 <a href="#" id="menuLink1" class="pure-menu-link">Language Selector</a>
                 <ul class="pure-menu-children">
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">English</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Amharic</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Spanish</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-
+   <script>
+       $(document).ready(function(){
+  $("button").click(function(){
+    $("btnhome").click();
+  });
+});
+   </script>
     <form>
-
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> </textarea>
-        <div id="header">
+        <div class="controls">
+            <span class="fa fa-microphone"></span>
+            
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" x-webkit-speech></textarea>
+            
+    </div>
+        <div id="header"> </div>
             <button id="btnhome">Translate</button>
             <button id="btnabout">Clear</button>
-    </form>
+    </form> 
+    
     <form>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> </textarea>
+        <textarea class="form-control2" id="exampleFormControlTextarea2" rows="3"> </textarea>
     </form>
 
 </body>
