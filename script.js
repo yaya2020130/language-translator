@@ -8,9 +8,18 @@ $(function() {
 
     // define the div elements,containers,ids and classes used
     // placeholders
+    let recordBtn = $("<button>").text("Start recording");
     let input = $("<input>").attr("style", "width: 400px;");
+    let translateBtn = $("<button>").text("Translate!");
     let output = $("<div>").attr("style", "font-size: larger;");
-    $("body").append(input, output);
+    $("body").append(recordBtn, input, translateBtn, output);
+
+    // make sure we're using the right speech recognition interface for the browser
+    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recorder = new SpeechRecognition();
+    let recordingOn = false;
+    recorder.continuous = true;
+    recorder.interimResults = true;
 
     // functions=============================================
 
@@ -20,9 +29,7 @@ $(function() {
         $.ajax({
             url: endpointUrl + "?q=" + inputText + "&langpair=" + srcLang + "|" + targetLang,
             method: "GET"
-        }).then(function(response) {
-            console.log(response)
-            
+        }).then(function(response) {            
             //for translation quality - iterate through matches and find the machine translation if possible -- work on this later if needed
             // let translation;
             // for (let i = 0; i < response.matches.length; i++) {
@@ -36,8 +43,6 @@ $(function() {
             let translation = response.responseData.translatedText;
 
             //-----------Output
-
-            //console.log(response);
 
             // make the output from the program visible on the screen(use the text method) 
             output.text(translation);
@@ -57,64 +62,47 @@ $(function() {
 
     // using "change" event for now--we can adapt this to the frontend code later
     // will update the output when user presses enter on the input
-    input.change(function() {
+    translateBtn.click(function() {
         //use the val() method to pull the user input from the page
-        userText = $(this).val();
-        if (userText.length > 125) { // use 125 for now, can come up with a better system later
+        let userText = input.val();
+        if (userText.length > 500) {
             // Input is over max, do something here
-
+            output.text("Error: character length limit exceeded");
+            return false;
         }
-        // use val() to get the languages we are translating from/into
+
+        // TODO: val() to get the languages we are translating from/into
         // needs to be a 2 character string in ISO format!
         // example: English = "en", spanish = "es", japanese = "ja"
-        fromLang = "en"; //placeholder
-        toLang = "ja"; //placeholder
+        let fromLang = "en"; //placeholder
+        let toLang = "amh"; //placeholder
 
         // run the translation function
-        translate(userText, "en", "ja");
-
-        return false; //prevents default
+        translate(userText, fromLang, toLang);
+    });
+    
+    // Toggle speech to text recording
+    recordBtn.click(function() {
+        if (!recordingOn) {
+            recordingOn = true;
+            $(this).text("Stop recording");
+            recorder.start();
+        } else {
+            recordingOn = false;
+            $(this).text("Start recording");
+            recorder.stop();
+        }
     });
 
-}); // NO REAL CODE BELOW THIS LINE==========================
+    // Add recorded audio to input textarea
+    recorder.onresult = function(event) {
+        let changes = "";
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+                changes += event.results[i][0].transcript;
+            }
+        }
+        input.val(input.val() + changes);
+    };
 
-
-
-// ==============================================
-
- 
-// const voice =document.querySelector(".voice");
-// const voice2text=document.querySelector(".voice2text")
-
-// const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-
-// const recorder=new SpeechRecognition();
-// recorder.interimResults=true;
-
-// recorder.onstart=()=>{
-//   console.log('voice activated');
-// };
-
-// recorder.onresult=(event)=>{
-//    console.log(event)
-//    const resultIndex=event.resultIndex;
-//    const transcript=event.results[
-//   resultIndex][0].transcript
-//   voice2text.textcontent=transcript;
-
-//  }
-// voice.addEventListener('click',()=>{
-//   recorder.start();
-// })
-
-
-// =================================================================
-
-// for voice stuff, add this to the above code
-
-//  identify the stop recording button
-    // stop recording when max recording is reached
-    // call the stop recoding fuction
-    // specify the maximum set time out or the maximum word the app takes in  one minute
-// define the start recording funcion
-// define the stop recording function
+}); // NO CODE BELOW THIS LINE==========================
