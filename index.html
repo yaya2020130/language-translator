@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!-- link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <script src="https://use.fontawesome.com/9fb4ea5fa6.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
+
+    <title>AYAM!</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body align="center">
+    <div>
+    <header class="titleSection" align="center">
+        <h1 id="title">AYAM</h1>
+    </header>
+    </div>
+
+    <div class="selectCon">
+        <div>
+            <label for="inputLang">Translate From:</label>
+
+            <select id="inputLang">
+                <option>Hello</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="outputLang">Translate To:</label>
+            <select id="outputLang"></select>
+        </div>
+    </div>
+    <form>
+        <div class="controls">
+
+            <textarea class="textOutput" id="textArea1" rows="3" x-webkit-speech></textarea>
+
+        </div>
+
+    </form>
+    <div id="buttons">   
+        <button id="btnRecord" class="pure-button button-danger"><span class="fa fa-microphone"></span></button>
+        <button id="btnTrans" class="pure-button button-success">Translate</button>
+        <button id="btnClear" class="pure-button button-danger">Clear</button>
+    </div>
+
+    <form>
+        <textarea class="resultInput" id="textArea2" rows="3"> </textarea>
+    </form>
+ 
+    <div>Icons made by <a href="https://www.flaticon.com/authors/mavadee" title="mavadee">mavadee</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    <!-- end stuff -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

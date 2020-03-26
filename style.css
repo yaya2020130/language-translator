@@ -1,0 +1,136 @@
+
+
+#title {
+  color: maroon;
+ font-size: 40px;
+ font-family: 'Marck Script', cursive;
+}
+#form {
+     padding-right: 50px; 
+}
+.textOutput{
+    margin-left: .5%;
+    right: -50px;
+    width:50vw;
+    height: 30vh; 
+    border: 7px solid   rgb(46, 174, 183);
+    border-radius: 15px;
+    -webkit-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
+-moz-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
+box-shadow: 2px -1px 13px 1px rgba(250,247,250,0.226);
+background-color: rgba(250, 247, 250, .9);
+color: black;
+font-size: 32px;
+transition: 2.2s;
+-ms-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+.textOutput:focus { 
+    background-color: rgba(250, 247, 250);
+    outline: none;
+    -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  }
+  span.fa {
+      color:red;
+      font-size: 25px;
+      background-color: white;
+      width: 50px;
+      padding: 10px;
+      border-radius: 25px;
+  }
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto; 
+    background: darkgrey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.resultInput {
+    margin-left: .5%;
+    right: -50px;
+    width:50vw;
+    height: 30vh; 
+    border: 7px solid   rgb(46, 174, 183);
+    border-radius: 15px;
+    -webkit-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
+-moz-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
+box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
+background-color: rgba(250, 247, 250, .9);
+color: black;
+font-size: 32px;
+transition: 2.2s;
+-ms-transform: scaleY(.5);
+  transform: scaleY(.5);
+    
+} 
+.resultInput:focus {
+    background-color: rgba(250, 247, 250);
+    outline: none;
+    -ms-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+
+
+
+   
+    #mytextarea {
+        height: 300px;
+    
+        width: 100px;
+        margin-right: 100px;
+   
+    }
+    body { 
+        background: url(assets/img/Languages\ Around.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .form-group {
+        position: relative;  
+        height: 200px;
+        width: 400px;
+      }
+      
+
+        .control {
+            width: 100%;
+        }
+        .selectCon {
+          display: flex;
+          background: darkgrey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+          
+      
+    
+    justify-content: space-around;
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+        }
+
+.button-success {
+  background-color:green;
+  color: white;
+}
+.button-danger {
+  background-color: red;
+  color: white;
+}
+
+#inputLang {
+  background-color: white;
+} 
+
+#outputLang {
+  background-color: white;
+}
