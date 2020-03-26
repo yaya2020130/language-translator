@@ -25,7 +25,7 @@ transition: 2.2s;
     -ms-transform: scaleY(1);
   transform: scaleY(1);
   }
-  span.fa.fa-microphone {
+  span.fa {
       color:red;
       font-size: 25px;
       background-color: white;
