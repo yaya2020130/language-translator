@@ -15,7 +15,8 @@ $(function() {
         { name : "русский",      code: ["ru", "ru-RU"] },
         { name : "español",     code: ["es", "es-ES"] },
         { name : "af Soomaali", code: ["so", "so-SO"] },
-        { name : "日本語",      code: ["ja", "ja-JP"] }
+        { name : "日本語",      code: ["ja", "ja-JP"] },
+        { name : "اَلْعَرَبِيَّةُ",        code: ["ar", "ar-SA"] }
     ];
 
     let inputLang = $("#inputLang");
@@ -35,7 +36,7 @@ $(function() {
 
     // define the div elements,containers,ids and classes used
     // placeholders
-    let recordBtn = $("#recordBtn");
+    let recordBtn = $("#btnRecord");
     let input = $("#textArea1");
     let translateBtn = $("#btnTrans");
     let clearBtn = $("#btnClear");
@@ -120,12 +121,12 @@ $(function() {
     recordBtn.click(function() {
         if (!recordingOn) {
             recordingOn = true;
-            $(this).text("Stop recording");
+            $(this).html(`<span class="fa fa-microphone-slash"></span>`);
             recorder.lang = JSON.parse($("#inputLang").val())[1];
             recorder.start();
         } else {
             recordingOn = false;
-            $(this).text("Start recording");
+            $(this).html(`<span class="fa fa-microphone"></span>`);
             recorder.stop();
         }
         return false;
