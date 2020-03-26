@@ -1,11 +1,6 @@
 
-
-
-#title {
-    text-align:left;
-}
 #form {
-    padding-right: 50px;
+     padding-right: 50px; 
 }
 .textOutput{
     margin-left: .5%;
@@ -25,20 +20,29 @@ transition: 2.2s;
   transform: scaleY(.5);
 }
 .textOutput:focus { 
-    background-color: rgba(250, 247, 250, 0.596);
+    background-color: rgba(250, 247, 250);
     outline: none;
     -ms-transform: scaleY(1);
   transform: scaleY(1);
   }
   span.fa.fa-microphone {
-      color:white;
+      color:red;
       font-size: 25px;
-      position: absolute;
-      left: 500px;
-    top: 80px;
-
+      background-color: white;
+      width: 50px;
+      padding: 10px;
+      border-radius: 25px;
   }
-  
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto; 
+    background: darkgrey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
 .resultInput {
     margin-left: .5%;
@@ -56,10 +60,10 @@ font-size: 32px;
 transition: 2.2s;
 -ms-transform: scaleY(.5);
   transform: scaleY(.5);
-    margin-bottom: 1000px;
+    
 } 
 .resultInput:focus {
-    background-color: rgba(250, 247, 250, 0.596);
+    background-color: rgba(250, 247, 250);
     outline: none;
     -ms-transform: scaleY(1);
   transform: scaleY(1);
@@ -94,3 +98,25 @@ transition: 2.2s;
         .control {
             width: 100%;
         }
+        .selectCon {
+          display: flex;
+          background: darkgrey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+          
+      
+    
+    justify-content: space-around;
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+        }
+
+.button-success {
+  background-color:green;
+  color: white;
+}
+.button-danger {
+  background-color: red;
+  color: white;
+}
