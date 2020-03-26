@@ -1,4 +1,10 @@
 
+
+#title {
+  color: maroon;
+ font-size: 40px;
+ font-family: 'Marck Script', cursive;
+}
 #form {
      padding-right: 50px; 
 }
@@ -11,9 +17,9 @@
     border-radius: 15px;
     -webkit-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
 -moz-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
-background-color: rgba(250, 247, 250, 0.226);
-color: rgb(224, 147, 45);
+box-shadow: 2px -1px 13px 1px rgba(250,247,250,0.226);
+background-color: rgba(250, 247, 250, .9);
+color: black;
 font-size: 32px;
 transition: 2.2s;
 -ms-transform: scaleY(.5);
@@ -54,8 +60,8 @@ transition: 2.2s;
     -webkit-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
 -moz-box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
 box-shadow: 2px -1px 13px 1px rgba(250,247,250,1);
-background-color: rgba(250, 247, 250, 0.226);
-color: rgb(224, 147, 45);
+background-color: rgba(250, 247, 250, .9);
+color: black;
 font-size: 32px;
 transition: 2.2s;
 -ms-transform: scaleY(.5);
@@ -119,4 +125,12 @@ transition: 2.2s;
 .button-danger {
   background-color: red;
   color: white;
+}
+
+#inputLang {
+  background-color: white;
+} 
+
+#outputLang {
+  background-color: white;
 }
