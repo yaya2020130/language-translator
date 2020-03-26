@@ -7,14 +7,15 @@ $(function() {
     let endpointUrl = "https://api.mymemory.translated.net/get";
 
     //list of all languages and codes
-    //TODOadd more languages
+    //add more languages
     let languages = [
         { name : "English",     code: ["en", "en-US"] },
         { name : "français",    code: ["fr", "fr-FR"] },
         { name : "አማርኛ",       code: ["amh", "am-ET"] },
         { name : "русский",      code: ["ru", "ru-RU"] },
         { name : "español",     code: ["es", "es-ES"] },
-        { name : "af Soomaali", code: ["so", "so-SO"] }
+        { name : "af Soomaali", code: ["so", "so-SO"] },
+        { name : "日本語",      code: ["ja", "ja-JP"] }
     ];
 
     let inputLang = $("#inputLang");
@@ -25,22 +26,20 @@ $(function() {
         let inputDropdownItem = $("<option>");
         inputDropdownItem.text(languages[i].name);
         inputDropdownItem.val(JSON.stringify(languages[i].code));
-        inputDropdownItem.attr("data-code-voice", languages[i].codeVoice);
         inputLang.append(inputDropdownItem);
         let outputDropdownItem = $("<option>");
         outputDropdownItem.text(languages[i].name);
         outputDropdownItem.val(JSON.stringify(languages[i].code));
-        outputDropdownItem.attr("data-code-voice", languages[i].codeVoice);
         outputLang.append(outputDropdownItem);
     }
 
     // define the div elements,containers,ids and classes used
     // placeholders
-    let recordBtn = $("<button>").text("Start recording");
-    let input = $("<input>").attr("style", "width: 400px;");
-    let translateBtn = $("<button>").text("Translate!");
-    let output = $("<div>").attr("style", "font-size: larger;");
-    $("body").append(recordBtn, input, translateBtn, output);
+    let recordBtn = $("#recordBtn");
+    let input = $("#textArea1");
+    let translateBtn = $("#btnTrans");
+    let clearBtn = $("#btnClear");
+    let output = $("#textArea2");
 
     // make sure we're using the right speech recognition interface for the browser
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -73,8 +72,8 @@ $(function() {
 
             //-----------Output
 
-            // make the output from the program visible on the screen(use the text method) 
-            output.text(translation);
+            // make the output from the program visible on the screen
+            output.val(translation);
             console.log(response)
 
             //------------------
@@ -96,7 +95,7 @@ $(function() {
         let userText = input.val();
         if (userText.length > 500) {
             // Input is over max, do something here
-            output.text("Error: character length limit exceeded");
+            output.val("Error: character length limit exceeded");
             return false;
         }
 
@@ -108,6 +107,13 @@ $(function() {
 
         // run the translation function
         translate(userText, fromLang, toLang);
+        return false;
+    });
+
+    clearBtn.click(function() {
+        output.val("");
+        input.val("");
+        return false;
     });
     
     // Toggle speech to text recording
@@ -122,6 +128,7 @@ $(function() {
             $(this).text("Start recording");
             recorder.stop();
         }
+        return false;
     });
 
     // Add recorded audio to input textarea
